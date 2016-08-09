@@ -70,7 +70,7 @@ var vanillaPress = {
 	},
 
 	getContentElement: function ( rawContent ) {
-		var matches, tagName, contentText, contentElement;
+		var contentElement;
 
 		contentElement = document.createElement( 'div' );
 		contentElement.innerHTML = rawContent;
