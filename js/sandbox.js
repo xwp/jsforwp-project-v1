@@ -13,7 +13,7 @@ var getHeadlineAnchor, testHeadlineAnchor;
  * @return Object $node Anchor element, with an href value.
  */
 getHeadlineAnchor = function( slug ){
-	var hrefValue = '/' + slug;
+	var hrefValue = '#' + slug;
 
 	/*
 	 * Implement here.
@@ -43,7 +43,7 @@ testHeadlineAnchor = function testHeadlineAnchor() {
 		console.log( 'Make sure to use a document method to create this node. Like myNewNode = document.exampleMethod( "exampleArgument" );' );
 	}
 	if ( testAnchorElement ) {
-		expectedHrefValue = '/' + slug;
+		expectedHrefValue = '#' + slug;
 		actualHrefValue = testAnchorElement.getAttribute( 'href' );
 		isHrefValueCorrect = ( expectedHrefValue === actualHrefValue );
 

@@ -83,7 +83,7 @@ var vanillaPress = {
      * @return Object $node: Anchor tag, with an href value.
 	 */
 	getHeadlineAnchor: function( slug ){
-		var hrefValue = '/' + slug;
+		var hrefValue = '#' + slug;
 		// Implement here.
 		// The hrefValue will be part of the tag that you create, like:
 		// <a href="/my-example-slug">
