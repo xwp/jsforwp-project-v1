@@ -528,3 +528,15 @@ body {
     box-shadow: 0 2.5em 0 0 #ffffff;
   }
 }
+
+/****************/
+/* Custom css
+/****************/
+.blog-lists article {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+#view .blog-lists article h3 {
+  font-family: "Helvetica Neue", "Open Sans", sans-serif;
+}
