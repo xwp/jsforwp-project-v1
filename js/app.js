@@ -34,10 +34,12 @@ var vanillaPress = {
 	},
 
 	addEachPostTo: function( element ) {
+		var postsMarkup = document.createDocumentFragment();
 		posts.forEach( function( post ){
 			var renderedPost = vanillaPress.getRenderedPost( post );
-			element.appendChild( renderedPost );
+			postsMarkup.appendChild( renderedPost );
 		} );
+		element.appendChild( postsMarkup );
 	},
 
 	getBlogPostsElement: function( postData ) {
@@ -79,8 +81,8 @@ var vanillaPress = {
 	 * Return the element you've created.
 	 * End this function with a 'return' statement, like most of the functions here.
 	 *
-     * @param String $slug URL-friendly title of post, from which to construct href value.
-     * @return Object $node: Anchor tag, with an href value.
+	 * @param String $slug URL-friendly title of post, from which to construct href value.
+	 * @return Object $node: Anchor tag, with an href value.
 	 */
 	getHeadlineAnchor: function( slug ){
 		var hrefValue = '#' + slug;
