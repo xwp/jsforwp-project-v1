@@ -1,0 +1,55 @@
+{
+  "name": "highstart2",
+  "version": "0.0.1",
+  "main": "html/index.html",
+  "scripts": {
+    "build": "gulp build",
+    "watch": "gulp watch",
+    "start": "gulp watch",
+    "lint": "gulp lint",
+    "postinstall": "bower install"
+  },
+  "keywords": [
+    "sass"
+  ],
+  "author": "Mike Crantea",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/mehigh/highstart2/issues"
+  },
+  "dependencies": {
+    "autoprefixer": "^6.3.7",
+    "bower": "^1.7.9",
+    "css-mqpacker": "^5.0.1",
+    "del": "^2.2.1",
+    "glob-base": "^0.3.0",
+    "gulp": "gulpjs/gulp#4.0",
+    "gulp-browserify": "^0.5.1",
+    "gulp-clean-css": "^2.0.12",
+    "gulp-eslint": "^3.0.1",
+    "gulp-flatten": "^0.3.0",
+    "gulp-if": "^2.0.1",
+    "gulp-imagemin": "^3.0.2",
+    "gulp-jshint": "^2.0.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^6.1.1",
+    "gulp-sass": "^2.3.2",
+    "imagemin-pngquant": "^5.0.0",
+    "jshint": "^2.9.2",
+    "jshint-stylish": "^2.2.1",
+    "postcss-reporter": "^1.4.1",
+    "postcss-scss": "^0.1.9",
+    "sassdoc": "^2.1.20",
+    "stylefmt": "^4.2.1",
+    "stylelint": "^7.0.3",
+    "stylelint-config-standard": "^11.0.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "engine": "node >= 6",
+  "devDependencies": {
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-watch": "^4.3.9"
+  }
+}

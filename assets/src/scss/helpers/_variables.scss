@@ -1,0 +1,19 @@
+/* Breakpoints */
+$query-breakpoints: ( 'micro': 320px, 'small': 600px, 'medium': 768px, 'large': 960px, 'huge': 1440px );
+
+/* Typography */
+$base-font: Arial, "Helvetica Neue", Helvetica, sans-serif;
+$alt-font: "Times New Roman", Times, Baskerville, Georgia, serif;
+$base-font-px-size: 14;
+$base-font-size: 14px;
+$base-line-height: 18px;
+
+/* Grid / Spacings */
+$image-spacing: 10px;
+
+/* Colors */
+$blue: #277f9c;
+$primary: #000;
+$primary-bg: #fff;
+$link-color: $blue;
+// $link-hover: darken( $link-color, 10% );
