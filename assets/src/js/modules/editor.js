@@ -93,7 +93,9 @@
 
 		}
 
-		event.preventDefault();
+		if ( 'undefined' !== typeof event ) {
+			event.preventDefault();
+		}
 
 	};
 
