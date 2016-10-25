@@ -12,7 +12,9 @@
 	 *
 	 */
 
-	var router = {},
+	var editor = require( './editor.js' ),
+		model = require( './model.js' ),
+		router = {},
 		view = require( './view.js' );
 
 	router.init = function() {
@@ -55,19 +57,23 @@
 	 */
 	router.loadContent = function() {
 
-		var slug = router.getSlug();
+		var contentObj,
+			slug = router.getSlug();
 
 		view.clearContent();
-		if ( !slug ) {
+		contentObj = model.getContent( slug );
 
-			// homepage
+		if ( 'blog' === slug ) {
+
 			view.loadBlogPosts();
 
 		} else {
 
-			view.loadBlogPost( slug );
+			view.renderSingle( contentObj );
 
 		}
+
+		editor.currentContent = contentObj;
 
 	};
 

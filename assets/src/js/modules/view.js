@@ -20,6 +20,28 @@
 
 	view.init = function() {
 
+		view.createMainMenu();
+
+	};
+
+	/**
+	 * Create navigation.
+	 */
+	view.createMainMenu = function() {
+
+		var index,
+			max,
+			navEl = helpers.getNavEl(),
+			navMarkup = document.createDocumentFragment(),
+			pages = model.getPages();
+
+		for ( index = 0, max = pages.length; index < max; index++ ) {
+
+			navMarkup.appendChild( helpers.createMenuItem( pages[index] ) );
+
+		}
+		navEl.appendChild( navMarkup );
+
 	};
 
 	/**
@@ -29,10 +51,16 @@
 
 		var contentEl = helpers.getPageContentEl(),
 			index,
+			page = model.getPage( 'blog' ),
 			post,
 			posts = model.getPosts(),
 			postsMarkup = document.createDocumentFragment(),
-			postsWrapper = document.createElement( 'section' );
+			postsWrapper = document.createElement( 'section' ),
+			title,
+			titleEl = helpers.getPageTitleEl();
+
+		title = document.createTextNode( page.title );
+		titleEl.appendChild( title );
 
 		for ( index = 0; index < posts.length; index++ ) {
 
@@ -48,26 +76,35 @@
 
 	};
 
+	/* @TODO: Move null check inside the model */
 	/**
-	 * Adds the mark-up for the single post
+	 * Adds the mark-up for the single post / page
 	 *
-	 * @param {string} slug The unique slug identifying a post.
+	 * @param {object} single An object representing a single post or page.
 	 */
-	view.loadBlogPost = function( slug ) {
+	view.renderSingle = function( single ) {
 
 		var contentEl = helpers.getPageContentEl(),
-			post = model.getPost( slug ),
+			contentMarkup,
 			titleEl = helpers.getPageTitleEl(),
 			titleText;
 
-		if ( post ) {
+		view.clearContent();
 
-			view.clearContent();
-			titleText = document.createTextNode( post.title );
-			titleEl.appendChild( titleText );
-			contentEl.innerHTML = post.content;
+		if ( null === single ) {
+
+			titleText = '404 Error';
+			contentMarkup = 'Content not found';
+
+		} else {
+
+			titleText = single.title;
+			contentMarkup = single.content;
 
 		}
+
+		titleEl.appendChild( document.createTextNode( titleText ) );
+		contentEl.innerHTML = contentMarkup;
 
 	};
 
@@ -90,7 +127,7 @@
 			wrapper = document.createElement( 'article' );
 
 		title = document.createElement( 'h3' );
-		link.setAttribute( 'href', '#' + post.slug );
+		link.setAttribute( 'href', '#blog/' + post.slug );
 		link.appendChild( titleText );
 		title.appendChild( link );
 		title.setAttribute( 'class', 'pageTitle' );
@@ -124,6 +161,44 @@
 			titleEl.removeChild( titleEl.firstChild );
 
 		}
+
+	};
+
+	/**
+	 * Live updates on the title
+	 *
+	 * @param {string} newTitle New title received from editor
+	 */
+	view.updateTitleFromEditor = function( newTitle ) {
+
+		var titleEl = helpers.getPageTitleEl();
+
+		while ( titleEl.firstChild ) {
+
+			titleEl.removeChild( titleEl.firstChild );
+
+		}
+
+		titleEl.appendChild( document.createTextNode( newTitle ) );
+
+	};
+
+	/**
+	 * Live updates on the content
+	 *
+	 * @param {string} newContent New content received from editor
+	 */
+	view.updateContentFromEditor = function( newContent ) {
+
+		var contentEl = helpers.getPageContentEl();
+
+		while ( contentEl.firstChild ) {
+
+			contentEl.removeChild( contentEl.firstChild );
+
+		}
+
+		contentEl.appendChild( document.createTextNode( newContent ) );
 
 	};
 

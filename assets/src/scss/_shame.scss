@@ -31,6 +31,7 @@ html {
 
 body {
 	font-family: "Helvetica Neue", "Open Sans", sans-serif;
+	background: #ededed;
 }
 
 #editor {
@@ -348,21 +349,17 @@ body {
 	padding: 10px;
 }
 
-#view .container .content .primary #blogPosts {
-	padding-top: 20px;
-}
-
-#view .container .content .primary #blogPosts article {
+#view .container .content .primary #pageContent article {
 	margin: 10px 0 0;
 	border-top: 1px #ededed solid;
 	padding: 5px 0 10px;
 }
 
-#view .container .content .primary #blogPosts article h3 {
+#view .container .content .primary #pageContent article h3 {
 	font-size: 1.2rem;
 }
 
-#view .container .content .primary #blogPosts article p {
+#view .container .content .primary #pageContent article p {
 	font-size: 1rem;
 }
 
@@ -622,4 +619,5 @@ body {
 		box-shadow: 0 2.5em 0 0 #ffffff;
 	}
 }
+
 /* stylelint-enable */

@@ -1,0 +1,12 @@
+body #wrapper #editor {
+	display: block;
+	margin-left: 0;
+	transition: margin-left 0.3s ease-in-out, visibility 0s;
+
+	&.hidden {
+		display: block;
+		margin-left: -320px;
+		visibility: hidden;
+		transition: margin-left 0.3s ease-in-out, visibility 0s linear 0.4s;
+	}
+}

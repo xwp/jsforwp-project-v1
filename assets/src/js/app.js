@@ -6,9 +6,11 @@
  * When click on a site title, display all blog posts
  */
 /* eslint-disable */
-var model = require( './modules/model.js' ),
+var editor = require( './modules/editor.js' ),
+	model = require( './modules/model.js' ),
 	router = require( './modules/router.js' ),
-	vanillaPress = {};
+	vanillaPress = {},
+	view = require( './modules/view.js' );
 
 'use strict';
 
@@ -21,7 +23,9 @@ vanillaPress = {
 	init: function() {
 
 		model.init();
+		view.init();
 		router.init();
+		editor.init();
 
 	}
 };

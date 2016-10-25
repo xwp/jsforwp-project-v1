@@ -9,6 +9,32 @@
 
 <section id="wrapper">
 
+	<section id="editor" class="hidden">
+
+		<h1>VanillaPress</h1>
+
+		<nav id="edit" class="active">
+
+			<form action="">
+				<ul>
+					<li>
+						<label for="editTitle">Title</label>
+						<input type="text" name="editTitle" id="editTitle">
+					</li>
+					<li>
+						<label for="editContent">Content</label>
+						<textarea name="editContent" id="editContent"></textarea>
+					</li>
+					<li>
+						<button id="editUpdateBtn" type="submit" value="Update" class="btn primary">Update
+						</button>
+					</li>
+				</ul>
+			</form>
+		</nav>
+
+	</section>
+
 	<section id="view">
 
 		<div class="container">
@@ -17,6 +43,11 @@
 				<h1 id="siteName"><a href="#">VanillaPress</a></h1>
 				<h2 id="siteDesription">A JS Front &amp; Back End</h2>
 			</header>
+
+			<nav id="mainNav">
+				<ul>
+				</ul>
+			</nav>
 
 			<div class="content">
 
@@ -44,8 +75,15 @@
 
 	</section>
 
-
 </section>
+
+<div id="editorToggle" class="hidden">
+	<a href="#">
+		<span class="arrow"></span>
+		<label>Hide Editor</label>
+	</a>
+</div>
+
 <script src="../assets/src/js/data.js"></script>
 <script src="../assets/dist/js/app.js"></script>
 
