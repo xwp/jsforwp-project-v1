@@ -93,7 +93,10 @@ var posts =
 				"title":"Contact",
 				"content":"Drop me a line with any questions :)"
 			}
-		]
-data = { "posts": posts, "pages": pages };
+		],
+	settings = {
+		"editorVisible":false
+	}
+data = { "posts": posts, "pages": pages, "settings": settings };
 /* jshint ignore:end */
 /* eslint-enable */

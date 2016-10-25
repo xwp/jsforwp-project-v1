@@ -74,6 +74,7 @@
 		}
 
 		editor.currentContent = contentObj;
+		editor.fillEditForm( editor.currentContent );
 
 	};
 

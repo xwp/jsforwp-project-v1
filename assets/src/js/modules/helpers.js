@@ -142,6 +142,16 @@
 
 	};
 
+	/**
+	 * Gets all links
+	 * @return {NodeList} All link elements
+	 */
+	helpers.getLinks = function() {
+
+		return document.querySelectorAll( 'a' );
+
+	};
+
 	module.exports = helpers;
 
 }() );

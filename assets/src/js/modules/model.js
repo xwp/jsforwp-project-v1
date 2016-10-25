@@ -153,6 +153,43 @@
 	};
 
 	/**
+	 * Gets local store settings for editor visibility
+	 *
+	 * @return {Boolean} visible A boolean for keeping the state of the editor visibility
+	 */
+	model.getEditorVisibility = function() {
+
+		var store = model.getLocalStore();
+
+		if ( 'undefined' !== typeof store.settings ) {
+
+			return store.settings.editorVisible;
+
+		}
+		return false;
+
+	};
+
+	model.updateEditorVisibility = function( isVisible ) {
+
+		var store = model.getLocalStore();
+
+		if ( isVisible ) {
+
+			store.settings.editorVisible = true;
+
+		} else {
+
+			store.settings.editorVisible = false;
+
+		}
+
+		model.updateLocalStore( store );
+
+
+	};
+
+	/**
 	 * Checks if local store already exists
 	 * @returns {boolean} Returns true if local storage is present,
 	 * or false otherwise.

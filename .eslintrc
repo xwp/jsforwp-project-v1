@@ -4,7 +4,8 @@ globals: {
 	window: true,
 	global: true,
 	document: true,
-	localStorage: true
+	localStorage: true,
+	setTimeout: true
 }
 rules: {
 	// Possible Errors
@@ -52,7 +53,7 @@ rules: {
 	'eqeqeq': 2,
 	'global-require': 0,
 	'guard-for-in': 2,
-	'no-alert': 2,
+	'no-alert': 0,
 	'no-caller': 2,
 	'no-div-regex': 2,
 	'no-else-return': 2,
